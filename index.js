@@ -60,7 +60,7 @@ const isTargetReachable = timeout => async target => {
 		return checkHttp(url.toString(), timeout);
 	}
 
-	return isPortReachable(url.port, {host: address});
+	return isPortReachable(url.port, {host: address, timeout});
 };
 
 module.exports = async (destinations, {timeout = 5000} = {}) => {
